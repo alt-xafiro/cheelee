@@ -1,0 +1,34 @@
+include includes/utils.pug
+include includes/mixins.pug
+
+include includes/head.pug
+
+include includes/sections/header.pug
+include includes/sections/promo.pug
+include includes/sections/mission.pug
+include includes/sections/steps.pug
+include includes/sections/boxes.pug
+include includes/sections/presale.pug
+include includes/sections/about.pug
+
+doctype html
+
+html.page
+  +head()
+
+  body.page__body
+    div(style='display: none')
+      include /build/img/sprite.svg
+
+    +header('page__header')
+
+    main.page__main
+      h1.visually-hidden Cheelee
+      +promo('page__promo')
+      +mission('page__mission')
+      +steps('page__steps')
+      +boxes('page__boxes')
+      +presale('page__presale')
+      +about('page__about')
+
+    script(src='js/script.min.js')
